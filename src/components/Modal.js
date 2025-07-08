@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
+const Modal = ({ isOpen, onClose, title, children, size = 'md', slideFrom }) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -24,8 +24,13 @@ const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className={`bg-white rounded-lg shadow-xl w-full ${sizeClasses[size]} max-h-[90vh] overflow-y-auto`}>
+    <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 ${slideFrom === 'top' ? 'flex flex-col items-center justify-start p-0' : 'flex items-center justify-center p-4'}`}>
+      <div
+        className={`bg-white rounded-b-2xl shadow-xl w-full ${slideFrom === 'top' ? 'max-w-full' : sizeClasses[size]} max-h-[90vh] overflow-y-auto
+          ${slideFrom === 'top' ? 'animate-slide-down-modal' : ''}
+        `}
+        style={slideFrom === 'top' ? { marginTop: 0, borderTopLeftRadius: 0, borderTopRightRadius: 0 } : {}}
+      >
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <h2 className="text-xl font-semibold text-gray-900">{title}</h2>

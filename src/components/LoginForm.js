@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const LoginForm = ({ onSubmit, isLoading = false }) => {
   const [formData, setFormData] = useState({
@@ -152,6 +153,11 @@ const LoginForm = ({ onSubmit, isLoading = false }) => {
       </form>
     </div>
   );
+};
+
+LoginForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
 };
 
 export default LoginForm;

@@ -1,6 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import BottomNav from "./components/BottomNav";
+import SearchPage from "./pages/SearchPage";
+import { useAuth } from './context/AuthContext';
 
 // Import all pages
 import HomePage from "./pages/HomePage";
@@ -23,6 +26,15 @@ import BlogPostPage from "./pages/BlogPostPage";
 import ShippingReturnsPage from "./pages/Legal/ShippingReturnsPage";
 import PrivacyPolicyPage from "./pages/Legal/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/Legal/TermsOfServicePage";
+import CheckoutPage from "./pages/CheckoutPage";
+import OrderConfirmationPage from './pages/OrderConfirmationPage';
+import ProfilePage from './pages/ProfilePage';
+
+function ProtectedRoute({ children }) {
+  const { isAuthenticated, loading } = useAuth();
+  if (loading) return <div className="text-center py-12">Loading...</div>;
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
+}
 
 function App() {
   return (
@@ -40,17 +52,19 @@ function App() {
 
           {/* Cart */}
           <Route path="/cart" element={<CartPage />} />
+          {/* Checkout */}
+          <Route path="/checkout" element={<CheckoutPage />} />
 
           {/* Auth */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
-          {/* Account */}
-          <Route path="/account" element={<AccountPage />} />
-          <Route path="/account/orders" element={<OrderHistoryPage />} />
-          <Route path="/account/wishlist" element={<WishlistPage />} />
-          <Route path="/account/settings" element={<SettingsPage />} />
+          {/* Account (protected) */}
+          <Route path="/account" element={<ProtectedRoute><AccountPage /></ProtectedRoute>} />
+          <Route path="/account/orders" element={<ProtectedRoute><OrderHistoryPage /></ProtectedRoute>} />
+          <Route path="/account/wishlist" element={<ProtectedRoute><WishlistPage /></ProtectedRoute>} />
+          <Route path="/account/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
 
           {/* Content Pages */}
           <Route path="/about" element={<AboutPage />} />
@@ -64,11 +78,21 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-service" element={<TermsOfServicePage />} />
 
+          {/* Search */}
+          <Route path="/search" element={<SearchPage />} />
+
+          {/* Order Confirmation */}
+          <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
+
+          {/* Profile */}
+          <Route path="/profile" element={<ProfilePage />} />
+
           {/* 404 Page (Add this last) */}
           <Route path="*" element={<div>404 - Page Not Found</div>} />
         </Routes>
       </main>
       <Footer />
+      <BottomNav />
     </Router>
   );
 }

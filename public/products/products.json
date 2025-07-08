@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Black Wide Jeans",
+    "price": 49.99,
+    "image": "/products/jeans-black1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Light Blue Jeans",
+    "price": 54.99,
+    "image": "/products/jeans-blue1.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Black Wide Jeans 2",
+    "price": 47.99,
+    "image": "/products/jeans-black2.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Black Wide Jeans 3",
+    "price": 47.99,
+    "image": "/products/jeans-black3.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Brown Cargo Pants",
+    "price": 59.99,
+    "image": "/products/cargo-brown1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Brown Cargo Pants 2",
+    "price": 59.99,
+    "image": "/products/cargo-brown2.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Black Cargo Pants",
+    "price": 62.99,
+    "image": "/products/cargo-black1.jpg"
+  }
+] 

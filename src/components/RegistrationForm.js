@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const RegistrationForm = ({ onSubmit, isLoading = false }) => {
   const [formData, setFormData] = useState({
@@ -247,6 +248,11 @@ const RegistrationForm = ({ onSubmit, isLoading = false }) => {
       </form>
     </div>
   );
+};
+
+RegistrationForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
 };
 
 export default RegistrationForm;

@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaCheck } from 'react-icons/fa';
 
 const ProductCard = ({ product, onAddToCart }) => {
   const { id, name, price, image, rating, inStock, originalPrice, isNew } = product;
   const [isAdded, setIsAdded] = useState(false);
 
-  const handleAddToCart = async (e) => {
+  const handleAddToCart = (e) => {
     e.preventDefault();
-    if (!inStock || isAdded) return;
-
+    if (isAdded) return;
     setIsAdded(true);
-    
     if (onAddToCart) {
       onAddToCart(product);
     }
@@ -82,21 +81,19 @@ const ProductCard = ({ product, onAddToCart }) => {
 
           {/* Add to Cart Button */}
           <button
+            onClick={handleAddToCart}
+            disabled={isAdded}
             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform ${
               isAdded
-                ? 'bg-green-500 text-white shadow-lg scale-105 ring-2 ring-green-300 ring-opacity-50'
+                ? 'bg-[#FF6F3C] text-white shadow-lg scale-105 ring-2 ring-green-300 ring-opacity-50'
                 : inStock
                 ? 'bg-blue-600 text-white hover:bg-blue-700 hover:scale-105 shadow-md'
                 : 'bg-gray-400 text-white cursor-not-allowed'
             }`}
-            disabled={!inStock || isAdded}
-            onClick={handleAddToCart}
           >
             {isAdded ? (
               <div className="flex items-center space-x-2">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <FaCheck className="inline" />
                 <span>Added!</span>
               </div>
             ) : inStock ? (
