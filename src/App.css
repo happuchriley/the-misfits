@@ -1,0 +1,447 @@
+/* Base Styles */
+.App {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Logo Styles */
+.App-logo {
+  height: 40vmin;
+  max-height: 200px;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+/* Animation */
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+
+  .App-logo:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header Styles */
+.App-header {
+  background-color: #282c34;
+  background-image: linear-gradient(135deg, #282c34 0%, #1a1e23 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Link Styles */
+.App-link {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: rgba(97, 218, 251, 0.1);
+}
+
+.App-link:hover {
+  color: #4fc3f7;
+  background-color: rgba(97, 218, 251, 0.2);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 30vmin;
+  }
+
+  .App-header {
+    padding: 1rem;
+    font-size: calc(8px + 2vmin);
+  }
+}
+
+/* Accessibility Improvements */
+.App-header:focus-within {
+  outline: 2px solid #61dafb;
+  outline-offset: 4px;
+}
+
+/* Dark/Light Mode Support */
+@media (prefers-color-scheme: light) {
+  .App-header {
+    background-color: #f5f5f5;
+    color: #282c34;
+  }
+
+  .App-link {
+    color: #0077cc;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .App-header {
+    background-color: #282c34;
+    color: #f5f5f5;
+  }
+
+  .App-link {
+    color: #61dafb;
+  }
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* Focus Styles */
+:focus {
+  outline: 2px solid #61dafb;
+  outline-offset: 2px;
+}
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.bg-light {
+  background-color: #f8f9fa;
+}
+.bg-dark {
+  background-color: #343a40;
+}
+.text-light {
+  color: #f8f9fa;
+}
+.text-dark {
+  color: #343a40;
+}
+.text-muted {
+  color: #6c757d;
+}
+.text-primary {
+  color: #007bff;
+}
+.text-secondary {
+  color: #6c757d;
+}
+.text-success {
+  color: #28a745;
+}
+.text-danger {
+  color: #dc3545;
+}
+.text-warning {
+  color: #ffc107;
+}
+.text-info {
+  color: #17a2b8;
+}
+.text-light {
+  color: #f8f9fa;
+}
+.text-dark {
+  color: #343a40;
+}
+.text-white {
+  color: #ffffff;
+}
+.text-black {
+  color: #000000;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+.text-decoration-underline {
+  text-decoration: underline;
+}
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+.text-decoration-overline {
+  text-decoration: overline;
+}
+.text-decoration-blink {
+  text-decoration: blink;
+}
+.text-decoration-underline-overline {
+  text-decoration: underline overline;
+}
+
+.text-decoration-none:hover {
+  text-decoration: none;
+}
+
+.text-decoration-underline:hover {
+  text-decoration: underline;
+}
+.text-decoration-line-through:hover {
+  text-decoration: line-through;
+}
+.text-decoration-overline:hover {
+  text-decoration: overline;
+}
+
+.text-decoration-blink:hover {
+  text-decoration: blink;
+}
+.text-decoration-underline-overline:hover {
+  text-decoration: underline overline;
+}
+/* Responsive Utility Classes */
+@media (max-width: 576px) {
+  .text-sm-center {
+    text-align: center;
+  }
+  .text-sm-left {
+    text-align: left;
+  }
+  .text-sm-right {
+    text-align: right;
+  }
+}
+@media (min-width: 576px) {
+  .text-md-center {
+    text-align: center;
+  }
+  .text-md-left {
+    text-align: left;
+  }
+  .text-md-right {
+    text-align: right;
+  }
+}
+@media (min-width: 768px) {
+  .text-lg-center {
+    text-align: center;
+  }
+  .text-lg-left {
+    text-align: left;
+  }
+  .text-lg-right {
+    text-align: right;
+  }
+}
+@media (min-width: 992px) {
+  .text-xl-center {
+    text-align: center;
+  }
+  .text-xl-left {
+    text-align: left;
+  }
+  .text-xl-right {
+    text-align: right;
+  }
+}
+@media (min-width: 1200px) {
+  .text-xxl-center {
+    text-align: center;
+  }
+  .text-xxl-left {
+    text-align: left;
+  }
+  .text-xxl-right {
+    text-align: right;
+  }
+}
+/* Flexbox Utilities */
+.d-flex {
+  display: flex;
+}
+.d-inline-flex {
+  display: inline-flex;
+}
+.d-block {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.d-none {
+  display: none;
+}
+.d-inline {
+  display: inline;
+}
+.d-table {
+  display: table;
+}
+.d-table-row {
+  display: table-row;
+}
+.d-table-cell {
+  display: table-cell;
+}
+.d-grid {
+  display: grid;
+}
+.d-inline-grid {
+  display: inline-grid;
+}
+.d-flex-row {
+  flex-direction: row;
+}
+.d-flex-column {
+  flex-direction: column;
+}
+.d-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.d-flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.d-flex-wrap {
+  flex-wrap: wrap;
+}
+.d-flex-nowrap {
+  flex-wrap: nowrap;
+}
+.d-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.d-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.d-flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.d-flex-justify-start {
+  justify-content: flex-start;
+}
+.d-flex-justify-end {
+  justify-content: flex-end;
+}
+.d-flex-justify-center {
+  justify-content: center;
+}
+.d-flex-justify-between {
+  justify-content: space-between;
+}
+.d-flex-justify-around {
+  justify-content: space-around;
+}
+.d-flex-justify-evenly {
+  justify-content: space-evenly;
+}
+.d-flex-align-start {
+  align-items: flex-start;
+}
+.d-flex-align-end {
+  align-items: flex-end;
+}
+.d-flex-align-center {
+  align-items: center;
+}
+.d-flex-align-baseline {
+  align-items: baseline;
+}
+.d-flex-align-stretch {
+  align-items: stretch;
+}
+.d-flex-align-self-start {
+  align-self: flex-start;
+}
+.d-flex-align-self-end {
+  align-self: flex-end;
+}
+.d-flex-align-self-center {
+  align-self: center;
+}
+.d-flex-align-self-baseline {
+  align-self: baseline;
+}
+.d-flex-align-self-stretch {
+  align-self: stretch;
+}
+.d-flex-content-start {
+  align-content: flex-start;
+}
+.d-flex-content-end {
+  align-content: flex-end;
+}
+.d-flex-content-center {
+  align-content: center;
+}
+.d-flex-content-between {
+  align-content: space-between;
+}
+.d-flex-content-around {
+  align-content: space-around;
+}
+.d-flex-content-evenly {
+  align-content: space-evenly;
+}
+.d-flex-items-start {
+  align-items: flex-start;
+}
+.d-flex-items-end {
+  align-items: flex-end;
+}
+.d-flex-items-center {
+  align-items: center;
+}
+.d-flex-items-baseline {
+  align-items: baseline;
+}
+.d-flex-items-stretch {
+  align-items: stretch;
+}
+.d-flex-self-start {
+  align-self: flex-start;
+}
+.d-flex-self-end {
+  align-self: flex-end;
+}
+.d-flex-self-center {
+  align-self: center;
+}
+.d-flex-self-baseline {
+  align-self: baseline;
+}
+.d-flex-self-stretch {
+  align-self: stretch;
+}
